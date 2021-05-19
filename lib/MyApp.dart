@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:my_project/splash.dart';
 import 'bottom.dart';
 import 'widgets.dart';
+var c;
+var o;
+int n;
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -28,9 +31,6 @@ class _HomePage extends StatefulWidget{
 
 class _HomePageState extends State<HomePage>{
   int _currentIndex=0;
-  var c;
-  var o;
-  int n;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -163,7 +163,7 @@ class _HomePageState extends State<HomePage>{
                                           builder: (context) => bottom()),);
                                   },
                                   child: Text('OK',
-                                    style: TextStyle(color: Colors.blue,
+                                    style: TextStyle(color: c,
                                         fontWeight: FontWeight.bold,fontSize: 15),),),
                                 Padding(padding: EdgeInsets.only()),
                                 InkWell(
@@ -171,7 +171,7 @@ class _HomePageState extends State<HomePage>{
                                     Navigator.of(context).pop();
                                   },
                                   child: Text('Cancel',
-                                    style: TextStyle(color: Colors.blue,
+                                    style: TextStyle(color: c,
                                         fontWeight: FontWeight.bold,fontSize: 15),),),
                               ],
                             );
@@ -257,3 +257,35 @@ class _HomePageState extends State<HomePage>{
   }
 }
 
+class bottom extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: c,
+        title: Text('Palestine 🇵🇸'),
+      ),
+      body:SingleChildScrollView(
+          child:  Column(
+              children:[
+                Padding(padding: EdgeInsets.only(top: 20,left: 400)),
+                Image.asset('image/image4.jpg',height:200,),
+                Padding(padding: EdgeInsets.only(top: 20,left: 300)),
+                Text('Palestine Flag',style: TextStyle(fontSize: 20),),
+                Padding(padding: EdgeInsets.only(top: 30,left: 500)),
+                Image.asset('image/image5.jpg'),
+                Padding(padding: EdgeInsets.only(top: 20,left: 500)),
+                Text('Dome of the dock',style: TextStyle(fontSize: 20)),
+                Padding(padding: EdgeInsets.only(top: 30,left: 500)),
+                Image.asset('image/image6.jpg'),
+                Padding(padding: EdgeInsets.only(top: 20,left: 500)),
+                Text('Al-aqsa Mosque',style: TextStyle(fontSize: 20)),
+                Padding(padding: EdgeInsets.only(bottom: 20)),
+              ]
+          )
+      ),
+      backgroundColor: o,
+    );
+  }
+
+}
